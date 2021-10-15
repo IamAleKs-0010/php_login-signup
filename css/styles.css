@@ -9,9 +9,10 @@
 }
 
 body{
-    background-color: #222;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: #222;
 }
 
 :root{
@@ -27,11 +28,11 @@ body{
 }
 
 .form-group{
-    background-color: #fff;
     position:relative;
     width: 380px;
     padding: 55px 15px;
     text-align: center;
+    background-color: #fff;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -42,6 +43,7 @@ body{
 
 .title{
     margin-bottom: 20px;
+    color: #333;
 }
 
 
@@ -68,7 +70,7 @@ input:focus{
 
 input::placeholder{
     font-weight: 200;
-color: rgba(107, 107, 107, 0.9);
+    color: rgba(107, 107, 107, 0.9);
 }
 
 
@@ -95,6 +97,7 @@ color: rgba(107, 107, 107, 0.9);
 .subtext{
     margin-top: 15px;
     font-size: .8rem;
+    color: #333;
 }
 
 .form--link{
