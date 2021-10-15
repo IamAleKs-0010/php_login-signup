@@ -26,10 +26,10 @@
                 <label for="password"><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
 
             <!-- Password Confirm -->
-                <label: for="passwordConfirm"><input type="password" name="password_confirm" id="passwordConfirm" autocomplete="off" placeholder="Confirmar contraseña" required></label>
+                <label for="passwordConfirm"><input type="password" name="password_confirm" id="passwordConfirm" autocomplete="off" placeholder="Confirmar contraseña" required></label>
 
             <!-- If error -->
-            <?php if(!empty($error)) : ?>
+                <?php if(!empty($error)) : ?>
                     <div class="error">
                         <?php echo $error; ?>
                     </div>
