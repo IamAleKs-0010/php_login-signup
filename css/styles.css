@@ -130,3 +130,15 @@ input::placeholder{
 .image{
     display: block;
 }
+
+.error{
+    margin: 5px 0 10px 0;
+}
+
+.error li{
+    margin-left: 8px;
+    text-align: left;
+    font-size: .8rem;
+    color: #333;
+    list-style-type: disc;
+}
