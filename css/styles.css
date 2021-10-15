@@ -123,8 +123,9 @@ input::placeholder{
 }
 
 .text{
-    text-align: left;
     margin-bottom: 15px;
+    text-align: left;
+    color: #333;
 }
 
 .image{
