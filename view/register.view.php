@@ -17,10 +17,10 @@
             <h1 class="title">Regístrate</h1>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
-                <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required"></label>
+                <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if(!$submit && isset($user)){ echo $user; }?>"></label>
 
             <!-- Email -->
-                <label for="email"><input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required></label>
+                <label for="email"><input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required value="<?php if(!$submit && isset($email)){ echo $email; }?>"></label>
 
             <!-- Password -->
                 <label for="password"><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>

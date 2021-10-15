@@ -17,7 +17,7 @@
             <h1 class="title">Iniciar Sesión</h1>
             <form method="POST" action="#" class="form" enctype="multipart/form-data">
             <!-- Username -->
-                <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required"></label>
+                <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if(!$submit && isset($user)){ echo $user; } ?>"></label>
 
             <!-- Password -->
                 <label for="password"><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
