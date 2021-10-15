@@ -162,3 +162,9 @@ input::placeholder{
     font-weight: 500;
     color: #333;
 }
+
+.logout-link:visited{
+    font-size: .9rem;
+    font-weight: 500;
+    color: #333;
+}
