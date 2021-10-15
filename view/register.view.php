@@ -15,7 +15,7 @@
     <div class="container">
         <div class="form-group">
             <h1 class="title">Regístrate</h1>
-            <form method="POST" action="#" class="form" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
                 <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required"></label>
 
@@ -28,6 +28,13 @@
             <!-- Password Confirm -->
                 <label: for="passwordConfirm"><input type="password" name="password_confirm" id="passwordConfirm" autocomplete="off" placeholder="Confirmar contraseña" required></label>
 
+            <!-- If error -->
+            <?php if(!empty($error)) : ?>
+                    <div class="error">
+                        <?php echo $error; ?>
+                    </div>
+                <?php endif; ?>
+            
             <!-- Submit -->
                 <input type="submit" class="btn-submit" value="Registrarme">
             </form>
