@@ -16,7 +16,7 @@
         <div class="content-div">
             <h1 class="title">Contenido</h1>
             <p class="text">Contenido que solo puede ver usuarios registrados en la base de datos.</p>
-            <img src="descarga.jfif" alt="image" class="image">
+            <img src="assets/images/descarga.jfif" alt="image" class="image">
         </div>
     </div>
 </body>
