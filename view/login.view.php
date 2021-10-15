@@ -22,11 +22,16 @@
             <!-- Password -->
                 <label for="password"><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
 
+                <?php if(!empty($error)) : ?>
+            <!-- If error -->
+                    <div class="error">
+                        <?php echo $error; ?>
+                    </div>
+                <?php endif; ?>
 
             <!-- Submit -->
                 <input type="submit" class="btn-submit" value="Iniciar Sesión">
-                <p class="subtext">¿No tienes cuenta? <a href="" class="form--link">Regístrate Aquí</a>.</p>
-
+                <p class="subtext">¿No tienes cuenta? <a href="register.php" class="form--link">Regístrate Aquí</a>.</p>
             </form>
         </div>
     </div>
