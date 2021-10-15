@@ -37,6 +37,7 @@
             
             <!-- Submit -->
                 <input type="submit" class="btn-submit" value="Registrarme">
+                <p class="subtext">¿Ya tienes una cuenta? <a href="login.php" class="form--link">Iniciar Sesión</a>.</p>
             </form>
         </div>
     </div>
