@@ -2,6 +2,9 @@
 
     require 'db.php';
     require_once 'autoload.php';
+
+    session_start();
+    check_session();
     
     $error = '';
     $submit = '';
@@ -27,8 +30,6 @@
 
         }
     }
-
-
 
     require 'view/register.view.php';
 
