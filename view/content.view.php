@@ -17,6 +17,9 @@
             <h1 class="title">Contenido</h1>
             <p class="text">Contenido que solo puede ver usuarios registrados en la base de datos.</p>
             <img src="assets/images/descarga.jfif" alt="image" class="image">
+            <div class="logout-div">
+                <p class="logout-text"><a href="logout.php" class="logout-link">Cerrar Sesión</a></p>
+            </div>
         </div>
     </div>
 </body>
