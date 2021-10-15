@@ -15,10 +15,26 @@
         if(empty($user) || empty($password)){
             $error .= '<li>' . FIELDS_MISSING . '</li>';
         } else{
-        
+            if(empty($error)){
+
+                $query = "SELECT * FROM users WHERE user = :user AND pass = :password LIMIT 1";
+                $stmt = $conn -> prepare($query);
+                $stmt -> execute(array(
+                                       ':user' => $user,
+                                       ':password' => $password,
+                                      ));
+                
+                $check = $stmt -> fetch();
+
+                if($check != true){
+                    $error .= '<li>' . LOGIN_FAIL . '</li>';
+                } else{
+                    $_SESSION['user'] = $user;
+                    header('Location: content.php');
+                }
+            }
         }
-
-
+    }
 
     require 'view/login.view.php';    
 
