@@ -15,14 +15,28 @@
         $cpassword = esc($_POST['password_confirm']);
         $reg_date = date("Y-m-d H:i:s");
         
+     // ? Preguntamos si el username posee espacios en blanco
         if(preg_match('/\s/', $user)){
             $error .= '<li>' . SYMBOLS_NOT_ALLOWED .'</li>';
         }
 
+     // ? Preguntamos si el username posee caracteres especiales
+        if(!preg_match('/(?!.*[\.\-\_])^[a-zA-Z0-9\.\-\_]+$/', $user)){
+            $error .= '<li>' . SYMBOLS_NOT_ALLOWED . '</li>';
+        }
+
+     // ? Preguntamos si el username está entre 3 y 16 dígitos
+        $validateUser = strlen($user);
+        if($validateUser > 16 || $validateUser <3){
+           $error .= '<li>' . INCORRECT_USER . '</li>'; 
+        }
+
+     // ? Preguntamos si el email cumple con la estructura de un correo
         if(!preg_match('/^[\w\-]+@[\w\-]+.[\w\-]+$/', $email)){
             $error .= '<li>' . INVALID_EMAIL  . '</li>';
         }
 
+     // ? Preguntamos si algún campo está vacio
         if(empty($user) || empty($email) || empty($password) || empty($cpassword)){
             $error .= '<li>' . FIELDS_MISSING . '</li>';
         } else{
@@ -34,13 +48,23 @@
 
             $check = $stmt -> fetch();
 
+        // ? Preguntamos si ya existe un usuario con mismo username o email en DB
             if($check != false){
                 $error .= '<li>' . USER_AND_EMAIL_ALREADY_EXISTS . '</li>';
             }  
 
+        // ? Preguntamos si la contraseña es mayor a 8 caracteres        
+            $validatePass = strlen($password);
+            $validateCPass = strlen($cpassword);
+            if($validatePass < 8 || $validateCPass < 8){
+                $error .= '<li>' . SHORT_PASSWORD . '</li>';
+            }
+
+        // ? Hasheamos contraseñas    
             $password = hash('sha512', $password);
             $cpassword = hash('sha512', $cpassword);
 
+        // ? Preguntamos si ambas contraseñas coinciden   
             if($password != $cpassword){
                 $error .= '<li>' . PASSWORD_NOT_MATCH . '</li>';
             }
