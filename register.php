@@ -3,7 +3,6 @@
     require 'db.php';
     require_once 'autoload.php';
 
-    session_start();
     check_session();
     
     $error = '';
@@ -28,6 +27,39 @@
             $error .= '<li>' . FIELDS_MISSING . '</li>';
         } else{
 
+            $query = 'SELECT user email FROM `users` WHERE user = :user OR email = :email LIMIT 1';
+            $stmt = $conn -> prepare($query);
+            $stmt -> execute (array(':user' => $user,
+                                    ':email' => $email)); 
+
+            $check = $stmt -> fetch();
+
+            if($check != false){
+                $error .= '<li>' . USER_AND_EMAIL_ALREADY_EXISTS . '</li>';
+            }  
+
+            $password = hash('sha512', $password);
+            $cpassword = hash('sha512', $cpassword);
+
+            if($password != $cpassword){
+                $error .= '<li>' . PASSWORD_NOT_MATCH . '</li>';
+            }
+
+            if(empty($error)){
+
+                $query = 'INSERT INTO users (user, email, pass, date) VALUES (:user, :email, :password, :reg_date)';
+                $stmt = $conn -> prepare($query);
+                $stmt -> execute(array(
+                                       ':user' => $user,
+                                       ':email' => $email,
+                                       ':password' => $password,
+                                       ':reg_date' => $reg_date
+                                      )
+                );
+
+                header('Location: login.php');
+                die();
+            }
         }
     }
 
