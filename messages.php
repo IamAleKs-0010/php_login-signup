@@ -12,6 +12,9 @@
     define('EMAIL_IN_USE', 'El correo que ingresaste ya está en uso.');
     define('SYMBOLS_NOT_ALLOWED', 'Solo se admiten letras, números, guiones y guiones bajos. Por favor, inténtalo de nuevo sin símbolos.');
 
+  // Email
+    define('INVALID_EMAIL', 'Por favor ingresa un correo válido.');
+
   // Error
     define('USER_REGISTRATION_FAIL', 'Registro de usuario fallido.');
 
