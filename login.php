@@ -9,8 +9,9 @@
     $submit = '';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $user = $_POST['user'];
-        $password = $_POST['password'];
+        $user = filter_var(esc($_POST['user']), FILTER_SANITIZE_STRING);
+        $password = esc($_POST['password']);
+        $password = hash('sha512', $password);
 
         if(empty($user) || empty($password)){
             $error .= '<li>' . FIELDS_MISSING . '</li>';
@@ -21,7 +22,7 @@
                 $stmt = $conn -> prepare($query);
                 $stmt -> execute(array(
                                        ':user' => $user,
-                                       ':password' => $password,
+                                       ':password' => $password
                                       ));
                 
                 $check = $stmt -> fetch();

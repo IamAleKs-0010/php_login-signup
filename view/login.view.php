@@ -15,7 +15,7 @@
     <div class="container">
         <div class="form-group">
             <h1 class="title">Iniciar Sesión</h1>
-            <form method="POST" action="#" class="form" enctype="multipart/form-data">
+            <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
                 <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if(!$submit && isset($user)){ echo $user; } ?>"></label>
 
