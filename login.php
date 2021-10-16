@@ -17,7 +17,7 @@
         } else{
             if(empty($error)){
 
-                $query = "SELECT * FROM users WHERE user = :user AND pass = :password LIMIT 1";
+                $query = 'SELECT user pass FROM users WHERE user = :user AND pass = :password LIMIT 1';
                 $stmt = $conn -> prepare($query);
                 $stmt -> execute(array(
                                        ':user' => $user,
@@ -26,11 +26,12 @@
                 
                 $check = $stmt -> fetch();
 
-                if($check != true){
+                if($check != false){
                     $error .= '<li>' . LOGIN_FAIL . '</li>';
                 } else{
                     $_SESSION['user'] = $user;
                     header('Location: content.php');
+                    die();
                 }
             }
         }
