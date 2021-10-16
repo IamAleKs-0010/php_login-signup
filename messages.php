@@ -9,6 +9,7 @@
 
   // User    
     define('USER_AND_EMAIL_ALREADY_EXISTS', 'El usuario y/o correo electrónico ya está en uso.');
+    define('INCORRECT_USER', 'El usuario debe tener entre 3 y 16 caracteres.');
     define('SYMBOLS_NOT_ALLOWED', 'Solo se admiten letras, números, guiones y guiones bajos. Por favor, inténtalo de nuevo sin símbolos.');
 
   // Email
