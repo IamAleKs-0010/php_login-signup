@@ -109,7 +109,7 @@ input::placeholder{
 }
 
 .content-div{
-    position: relative;
+    position: absolute;
     width: 600px;
     height: 450px;
     padding: 55px;
@@ -163,8 +163,47 @@ input::placeholder{
     color: #333;
 }
 
-.logout-link:visited{
-    font-size: .9rem;
-    font-weight: 500;
-    color: #333;
+.error-div{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 1000px;
+    height: 550px;
+    flex-direction: column;
+}
+
+.error-div::after{
+    position: absolute;
+    z-index: -5;
+    content: "";
+    display:block;
+    top: 0;
+    right: 0;
+    width: 550px;
+    height: 550px;
+    background-image: url("../assets/images/noo.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    box-shadow: 10px -10px 0 0 var(--main-color);    
+}
+
+.error-title{
+    position:relative;
+    z-index: 10;
+    width: 500px;
+    margin: 230px 0 10px 0;
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, .6);
+}
+
+.come-back-link{
+    width: 436px;
+    height: 100px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.come-back-link:visited{
+    color: #fff;
 }
