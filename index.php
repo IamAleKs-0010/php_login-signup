@@ -1,7 +1,5 @@
 <?php
 
-    session_start();
-
     require 'autoload.php';
 
     if(isset($_SESSION['user'])){
@@ -9,6 +7,5 @@
     } else{
         header('Location: register.php');
     }
-
 
 ?>
