@@ -6,11 +6,12 @@
   // Password
     define('PASSWORD_NOT_MATCH', 'Las constraseñas no coinciden.');
     define('SHORT_PASSWORD', 'La contreña debe contener mínimo 8 caracteres.');
+    define('SYMBOLS_NOT_ALLOWED_PASS', 'Solo se admiten letras, números, guiones bajos y parentesis en la contraseña. Por favor, inténtalo de nuevo.');
 
   // User    
     define('USER_AND_EMAIL_ALREADY_EXISTS', 'El usuario y/o correo electrónico ya está en uso.');
     define('INCORRECT_USER', 'El usuario debe tener entre 3 y 16 caracteres.');
-    define('SYMBOLS_NOT_ALLOWED', 'Solo se admiten letras, números, guiones y guiones bajos. Por favor, inténtalo de nuevo sin símbolos.');
+    define('SYMBOLS_NOT_ALLOWED', 'Solo se admiten letras, números, guiones y parentesis. Por favor, inténtalo de nuevo sin símbolos.');
 
   // Email
     define('INVALID_EMAIL', 'Por favor ingresa un correo válido.');
