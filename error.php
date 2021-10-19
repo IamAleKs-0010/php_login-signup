@@ -4,7 +4,7 @@
     require_once 'autoload.php';
 
     if(!$conn){
-        require 'view/error.view.html';
+        require 'view/error.html';
     } else{
         header('Location: index.php');
     }
