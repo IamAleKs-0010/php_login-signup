@@ -9,16 +9,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="container">
         <div class="content-div">
             <h1 class="title">Contenido</h1>
-            <p class="text">Contenido que solo puede ver usuarios registrados en la base de datos.</p>
-            <img src="assets/images/descarga.jfif" alt="image" class="image">
-            <div class="logout-div">
-                <p class="logout-text"><a href="logout.php" class="logout-link">Cerrar Sesión</a></p>
+            <p class="content-div__text">Contenido que solo puede ver usuarios registrados en la base de datos.</p>
+            <img src="assets/images/descarga.jfif" alt="image" class="content-div__image">
+            <div class="content-div__logout">
+                <p><a href="logout.php" class="logout-link">Cerrar Sesión</a></p>
             </div>
         </div>
     </div>

@@ -9,11 +9,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;0,800;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="container">
-        <div class="form-group">
+        <div class="form-div sign-up">
             <h1 class="title">Regístrate</h1>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
@@ -28,16 +28,16 @@
             <!-- Password Confirm -->
                 <label for="passwordConfirm"><input type="password" name="password_confirm" id="passwordConfirm" autocomplete="off" placeholder="Confirmar contraseña" required></label>
 
-            <!-- If error -->
                 <?php if(!empty($error)) : ?>
+            <!-- If error -->
                     <div class="error">
                         <?php echo $error; ?>
                     </div>
                 <?php endif; ?>
-            
-            <!-- Submit -->
+
+            <!-- Submit -->                
                 <input type="submit" class="btn-submit" value="Registrarme">
-                <p class="subtext">¿Ya tienes una cuenta? <a href="login.php" class="form--link">Iniciar Sesión</a>.</p>
+                <p class="text-form have-account">¿Ya tienes una cuenta? <a href="login.php">Iniciar Sesión</a>.</p>
             </form>
         </div>
     </div>
