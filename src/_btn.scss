@@ -1,0 +1,14 @@
+    .btn-submit{
+        height: 45px;
+        margin: 15px 0 10px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        background-color: $main-color;
+        cursor: pointer;
+        transition: background-color .5s;
+
+        &:hover{
+            background-color: #a52d22; 
+        }
+    }

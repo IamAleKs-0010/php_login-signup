@@ -1,0 +1,97 @@
+@import 'config';
+@import 'btn';
+@import 'utils';
+
+@import 'login';
+@import 'error';
+@import 'content';
+
+body{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #222;
+}
+
+.container{
+    @include ctnrStyles();
+
+    .sign-up{
+        padding: 55px 15px 55px 15px;
+    }
+
+    .form-div{
+        position:relative;
+        width: 380px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+
+        .title{
+            margin-bottom: 20px;
+            color: #333; 
+        }
+
+        .form{
+            padding: 0 20px;
+
+            input{
+                width: 100%;
+                height: 43px;
+                margin-bottom: 10px;
+                padding: 5px 25px;
+                border: 1px solid rgba(0, 0, 0, .1);
+                border-radius: 35px;
+                -webkit-border-radius:35px;
+                -moz-border-radius:35px;
+                -ms-border-radius:35px;
+                -o-border-radius:35px;
+
+                &:focus{
+                    border: 1px solid rgba(0, 0, 0, .3);
+                }
+                
+                &::placeholder{
+                    font-weight: 200;
+                    color: rgba(107, 107, 107, 0.9);
+                }
+            }
+
+            .error{
+                margin: 5px 0 10px 0;
+                
+                .error li{
+                    margin-left: 8px;
+                    text-align: left;
+                    font-size: .8rem;
+                    color: #333;
+                    list-style-type: disc;
+                }
+    
+            }
+
+            .text-form{
+                font-size: .8rem;
+                margin-top: 10px;
+            }
+
+            .have-account{
+                color: #333;
+
+                a{
+                    color: $main-color;
+                
+                    &:hover{
+                        font-weight: 500;
+                        text-decoration: underline;
+                    }
+                    
+                    &:visited{
+                        color: rgba(107, 107, 107, 0.9);
+                    }
+                }
+            }
+        }
+    }
+}

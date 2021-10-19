@@ -1,0 +1,53 @@
+.error-div{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 1000px;
+    height: 550px;
+    flex-direction: column;
+
+    &::after{
+        position: absolute;
+        z-index: -5;
+        content: "";
+        display:block;
+        top: 0;
+        right: 0;
+        width: 550px;
+        height: 550px;
+        background-image: url("../assets/images/noo.gif");
+        background-repeat: no-repeat;
+        background-position: right;
+        box-shadow: 10px -10px 0 0 $main-color;    
+    }
+
+    .error-title{
+        position: relative;
+        z-index: 10;
+        width: 500px;
+        margin: 230px 0 10px 0;
+        color: #fff;
+        text-shadow: 5px 10px 10px rgba(0, 0, 0, .6);
+    }
+
+    p{
+        .goback-link{
+            width: 436px;
+            height: 100px;
+            padding-left: 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: underline;
+            
+            &:visited{
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+

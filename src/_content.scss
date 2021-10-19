@@ -1,0 +1,41 @@
+.content-div{
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    padding: 55px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+
+    .content-div__text{
+        margin-bottom: 15px;
+        text-align: left;
+        color: $txt-color;
+    }
+
+    .content-div__image{
+        display: block;
+    }
+
+    .content-div__logout{
+        position: absolute;
+        top: -30px;
+        right: 0;
+        width: 120px;
+        height: 70px;
+        padding-top: 8px;
+        background-color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    
+        p{
+            .logout-link{
+                font-size: .9rem;
+                font-weight: 500;
+                color: #333;
+            }
+        }
+    }    
+
+}
