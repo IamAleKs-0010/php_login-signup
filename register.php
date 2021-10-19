@@ -6,7 +6,7 @@
     check_session();
 
     $error = '';
-    $submit = '';
+    $submit = false;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $user = esc($_POST['user']);
@@ -71,8 +71,8 @@
                             $error .= '<li>' . SYMBOLS_NOT_ALLOWED_PASS .'</li>';
                         } else{
                             // ? Hasheamos contraseñas    
-                            $password = hash('sha512', $password);
-                            $cpassword = hash('sha512', $cpassword);
+                            $password = md5($password);
+                            $cpassword = md5($cpassword);
 
                             if($password != $cpassword){
                                 $error .= '<li>' . PASSWORD_NOT_MATCH . '</li>';
@@ -99,6 +99,8 @@
                                        ':reg_date' => $reg_date
                                       )
                 );
+
+                $submit = true;
 
                 header('Location: login.php');
                 die();
