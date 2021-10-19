@@ -6,12 +6,12 @@
     check_session();
 
     $error = '';
-    $submit = '';
+    $submit = false;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $user = filter_var(esc($_POST['user']), FILTER_SANITIZE_STRING);
         $password = esc($_POST['password']);
-        $password = hash('sha512', $password);
+        $password = md5($password);
 
         if(empty($user) || empty($password)){
             $error .= '<li>' . FIELDS_MISSING . '</li>';
@@ -28,11 +28,12 @@
                 $check = $stmt -> fetch();
 
                 if($check != false){
-                    $error .= '<li>' . LOGIN_FAIL . '</li>';
-                } else{
                     $_SESSION['user'] = $user;
                     header('Location: content.php');
                     die();
+                    $submit = true;
+                } else{
+                    $error .= '<li>' . LOGIN_FAIL . '</li>';
                 }
             }
         }
