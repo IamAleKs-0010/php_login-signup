@@ -17,10 +17,10 @@
             <h1 class="title">Iniciar Sesión</h1>
             <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
-                <label for="user"><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if($submit != true && isset($user)){ echo $user; } ?>"></label>
+                <label for="user"><i class="fas fa-user icon icon-user"></i><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if($submit != true && isset($user)){ echo $user; } ?>"></label>
 
             <!-- Password -->
-                <label for="password"><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
+                <label for="password"><i class="fas fa-lock icon icon-pass"></i><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
 
                 <?php if(!empty($error)) : ?>
             <!-- If error -->
