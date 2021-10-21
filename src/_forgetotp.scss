@@ -1,0 +1,43 @@
+.sc{
+
+    width: auto;
+    position:relative;
+    padding: 55px 15px 55px 15px; 
+
+    .sc__title{
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+    }
+
+    .sc__text{
+        display: inline-block;
+        margin-bottom: 25px;
+
+        span{
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+    }
+
+    .form{
+        .sc-input-div{
+            height: 40px;
+        }
+
+        .btn-sc{
+            margin-bottom: 25px;
+        }
+
+        .no-sent{
+            a{
+                color: $main-color;
+
+                &:visited{
+                    color: $main-color;
+                }
+                
+            }
+        }
+    }
+}
