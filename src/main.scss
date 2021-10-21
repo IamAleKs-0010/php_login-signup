@@ -2,6 +2,10 @@
 @import 'btn';
 @import 'utils';
 
+@import 'inputs';
+@import 'forget';
+@import 'newpass';
+@import 'forgetotp';
 @import 'login';
 @import 'error';
 @import 'content';
@@ -14,7 +18,11 @@ body{
 }
 
 .container{
-    @include ctnrStyles();
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 
     .sign-up{
         padding: 55px 15px 55px 15px;
@@ -28,7 +36,7 @@ body{
         border-radius: 10px;
         box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 
-        .title{
+        .sign-up__title{
             margin-bottom: 20px;
             color: #333; 
         }
@@ -36,17 +44,9 @@ body{
         .form{
             padding: 0 20px;
 
-            input{
-                width: 100%;
-                height: 43px;
-                margin-bottom: 10px;
-                padding: 5px 25px;
-                border: 1px solid rgba(0, 0, 0, .1);
-                border-radius: 35px;
-                -webkit-border-radius:35px;
-                -moz-border-radius:35px;
-                -ms-border-radius:35px;
-                -o-border-radius:35px;
+            .input{
+                @include btnStruc();
+                padding: 5px 25px 5px 48px;
 
                 &:focus{
                     border: 1px solid rgba(0, 0, 0, .3);
@@ -58,17 +58,28 @@ body{
                 }
             }
 
+
+            .sc-error{
+                ul{
+                    li{
+                        margin: 0px 0 50px 0;
+                        
+                    }
+                }
+            }
+
             .error{
                 margin: 5px 0 10px 0;
-                
-                .error li{
-                    margin-left: 8px;
-                    text-align: left;
-                    font-size: .8rem;
-                    color: #333;
-                    list-style-type: disc;
+              
+                ul{
+                    margin-left: 20px;
+                    li{
+                        text-align: left;
+                        font-size: .8rem;
+                        color: #333;
+                        list-style-type: disc;
+                    }
                 }
-    
             }
 
             .text-form{
@@ -77,6 +88,7 @@ body{
             }
 
             .have-account{
+                margin-top: 20px;
                 color: #333;
 
                 a{
@@ -88,7 +100,7 @@ body{
                     }
                     
                     &:visited{
-                        color: rgba(107, 107, 107, 0.9);
+                        color: $main-color;
                     }
                 }
             }

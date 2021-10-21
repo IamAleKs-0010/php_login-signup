@@ -1,6 +1,11 @@
 .login{
     padding: 55px 15px 20px 15px;
 
+    .login__title{
+        margin-bottom: 20px;
+        color: #333; 
+    }
+
     .lost-pass{
         color: $main-color;
         margin-bottom: 35px;
@@ -19,18 +24,19 @@
 
     .no-account{
         margin-top: 40px;
-        color: rgba(122, 121, 121, 0.9);
+        color: rgba(138, 138, 138, 0.9);
+        
 
         a{
-            color: rgba(104, 104, 104, 0.9);
+            color: rgba(138, 138, 138, 0.9);
 
             &:hover{
                 text-decoration: underline;
-                font-weight:600;
+                font-weight:500;
             }
 
             &:visited{
-                color: $main-color;
+                color: rgba(138, 138, 138, 0.9);
             }
         }
 
