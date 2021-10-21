@@ -29,6 +29,7 @@
 
 
  # PASSWORD CHANGES
+    define('MAIL_DOES_NOT_EXIST', 'No existe un usuario con ese correo electrónico.');
     define('PASSWORD_CHANGE_SUCCESS', 'Contraseña cambiada con éxito.');
 
 
