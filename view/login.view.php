@@ -14,13 +14,13 @@
 <body>
     <div class="container">
         <div class="form-div login">
-            <h1 class="title">Iniciar Sesión</h1>
+            <h1 class="login__title">Iniciar Sesión</h1>
             <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form" enctype="multipart/form-data">
             <!-- Username -->
-                <label for="user"><i class="fas fa-user icon icon-user"></i><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="btn-required" value="<?php if($submit != true && isset($user)){ echo $user; } ?>"></label>
+                <label for="user"><i class="fas fa-user icon icon-user"></i><input type="text" name="user" id="user" autocomplete="off" placeholder="Usuario" required class="input" value="<?php if($submit != true && isset($user)){ echo $user; } ?>" autofocus></label>
 
             <!-- Password -->
-                <label for="password"><i class="fas fa-lock icon icon-pass"></i><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required></label>
+                <label for="password"><i class="fas fa-lock icon icon-pass"></i><input type="password" name="password" id="password" autocomplete="off" placeholder="Contraseña" required class="input"></label>
 
                 <?php if(!empty($error)) : ?>
             <!-- If error -->
@@ -31,7 +31,7 @@
 
             <!-- Submit -->
                 <input type="submit" class="btn-submit" value="Iniciar Sesión">
-                <p class="text-form lost-pass"><a href="#">¿Olvidaste tu correo o contraseña?</a></p>
+                <p class="text-form lost-pass"><a href="./forget.php">¿Olvidaste tu correo o contraseña?</a></p>
                 <p class="text-form no-account">¿No tienes una cuenta? <a href="register.php">Regístrate Aquí</a>.</p>
             </form>
         </div>
