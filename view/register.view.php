@@ -31,7 +31,9 @@
                 <?php if(!empty($error)) : ?>
             <!-- If error -->
                     <div class="error">
-                        <?php echo $error; ?>
+                        <ul>
+                            <?php echo $error; ?>
+                        </ul>    
                     </div>
                 <?php endif; ?>
 
