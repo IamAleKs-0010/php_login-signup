@@ -31,8 +31,12 @@
  # PASSWORD CHANGES
     define('MAIL_DOES_NOT_EXIST', 'No existe un usuario con ese correo electrónico.');
     define('PASSWORD_CHANGE_SUCCESS', 'Contraseña cambiada con éxito.');
+    
+  // Recovery Code    
+    define('INVALID_CODE', 'Por favor ingresa el código correctamente');
+    define('INCORRECT_CODE', 'El código que ingresaste es incorrecto, por favor inténtalo de nuevo.');
 
-
+    
  # FILES
     define('ERROR_UPLOADING_FILE', 'El archivo no es una imagen o el archivo es muy pesado.');
     define('MUST_UPLOAD_FILE', 'Debes seleccionar un archivo.');
