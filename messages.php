@@ -33,7 +33,7 @@
     define('PASSWORD_CHANGE_SUCCESS', 'Contraseña cambiada con éxito.');
     
   // Recovery Code    
-    define('INVALID_CODE', 'Por favor ingresa el código correctamente');
+    define('INVALID_CODE', 'Por favor ingresa el código correctamente.');
     define('INCORRECT_CODE', 'El código que ingresaste es incorrecto, por favor inténtalo de nuevo.');
 
     
