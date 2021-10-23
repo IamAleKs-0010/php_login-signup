@@ -43,11 +43,9 @@
 //  $headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
   
   # Send
-    // if(mail($to, $subject, $message, $headers)){
-    //   echo 'chidori';
-    // }else{
-    //   echo 'no sirvió :(';
-    // };
+      $submit = false;
+    if(mail($to, $subject, $message, $headers)){
+      $submit = true;
+    }
       
-
 ?>
