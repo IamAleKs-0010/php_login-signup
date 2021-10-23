@@ -15,15 +15,18 @@
     <div class="container">
         <div class="form-div sc">
             <h1 class="sc__title">Código de Seguridad</h1>
-            <p class="sc__text">El código ha sido enviado a:<br><span>alexander@mail.com</span></p>
+            <p class="sc__text">El código ha sido enviado a:<br><span><?php if(isset($_GET['email'])){ echo $hiddenEmail; }?></span></p>
 
-            <form action="#" class="form" enctype="multipart/form-data" method="POST">
+            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" class="form" enctype="multipart/form-data" method="POST">
             <!-- Code -->       
                 <div class="sc-input-div">     
-                    <input type="number" maxlength="1" class="input-code" autocomplete="off" required>
-                    <input type="number" maxlength="1" class="input-code" autocomplete="off" required>
-                    <input type="number" maxlength="1" class="input-code" autocomplete="off" required>
-                    <input type="number" maxlength="1" class="input-code" autocomplete="off" required>
+                    <input type="number" class="input-code" autocomplete="off" autocomplete="off" name="code[]" required>
+                    <input type="number" class="input-code" autocomplete="off" autocomplete="off" name="code[]" required>
+                    <input type="number" class="input-code" autocomplete="off" autocomplete="off" name="code[]" required>
+                    <input type="number" class="input-code" autocomplete="off" autocomplete="off" name="code[]" required>
+
+                    <input type="hidden" name="email" value="<?php echo $email;?>">
+                    <input type="hidden" name="token" value="<?php echo $token;?>">
                 </div>
 
             <!-- Submit -->
