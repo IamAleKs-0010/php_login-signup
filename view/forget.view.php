@@ -17,7 +17,7 @@
             <h1 class="forget__title">¿Contraseña olvidada?</h1>
             <p class="forget__text">¡No hay problema! Simplemente ingrese su correo electrónico y le enviaremos un código para restablecer su contraseña.</p>
             
-            <form action="#" class="form" enctype="multipart/form-data" method="POST">
+            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" class="form" enctype="multipart/form-data" method="POST">
             <!-- Email -->            
                 <label for="email" class="label-name"><i class="fas fa-envelope icon icon-email"></i><input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required class="input btn-required" autofocus></label>
                 
