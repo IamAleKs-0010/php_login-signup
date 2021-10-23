@@ -26,10 +26,17 @@
                     $error .= '<li>' . MAIL_DOES_NOT_EXIST .'</li>';
                 } else{
 
-                    # $_SESSION[''];
-                    
-                    header('Location: forget_otp.php');
-                    die();
+                    unset($query);
+
+                    $token = random_bytes(5);
+                    require 'mail.php';
+
+                    $query = 'INSERT INTO passwords (email, token, code) VALUES (:email, :token, :code)';
+                    $stmt = $conn -> prepare($query);
+                    $stmt -> execute(array(':email' => $email, ':token' => $token, ':code' => $code));
+            
+                    // header('Location: forget_otp.php');
+                    // die();
                 }
             }
         }
