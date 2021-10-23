@@ -1,6 +1,6 @@
 <?php
 
-    # Existe sesión
+    # Session exists
     function check_session(){
         if(isset($_SESSION['user'])){
             header('Location: index.php');
@@ -15,12 +15,24 @@
     }
 
     # Esc Email
-    function escEmail($data){
-        $data = trim($data);
-        $data = strtolower($data);
-        $data = filter_var($data, FILTER_VALIDATE_EMAIL);
-        $data = filter_var($data, FILTER_SANITIZE_EMAIL);
-        return $data;
+    function escEmail($email){
+        $email = trim($email);
+        $email = strtolower($email);
+        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        return $email;
+    }
+
+ # Convert mail to *  // example ' alexander@correo.com '
+    function emailAsterisk($email){
+        $emailTwoL = mb_substr($email, 0, 2); // al
+        $emailDomain = strstr($email, '@'); // @correo.com
+        $emailName = strstr($email, '@', true); // alexander 
+        $emailWithoutTwoL = substr($emailName, 2, 25); // exander
+        $pattern = "/[A-Za-z0-9]/";
+        $emailConverted = preg_replace($pattern, '*', $emailWithoutTwoL);
+
+        return $emailTwoL . $emailConverted . $emailDomain;
     }
 
 ?>
